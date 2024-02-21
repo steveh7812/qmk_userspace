@@ -34,7 +34,12 @@ enum preonic_keycodes {
   RAISE,
   BACKLIT,
   ZPUZ,
-  IMPM
+  IMPM,
+  RROLL,
+  BLDLY,
+  FRBL,
+  KICK,
+  COIN
 };
 
 // Alias for Shift/Enter
