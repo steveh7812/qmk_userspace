@@ -32,18 +32,13 @@ enum preonic_keycodes {
   DVORAK,
   LOWER,
   RAISE,
-  BACKLIT
+  BACKLIT,
+  ZPUZ,
+  IMPM
 };
 
 // Alias for Shift/Enter
 #define SFTENT RSFT_T(KC_ENT)
-
-// Aliases for playing songs
-float zelda_puzzle[][2] = SONG(ZELDA_PUZZLE);
-float imperial_march[][2] = SONG(IMPERIAL_MARCH);
-
-#define ZPUZ PLAY_SONG(zelda_puzzle);
-#define IMPM PLAY_SONG(imperial_march);
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -176,6 +171,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+// Aliases for playing songs
+float zelda_puzzle[][2] = SONG(ZELDA_PUZZLE);
+float imperial_march[][2] = SONG(IMPERIAL_MARCH);
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
         case QWERTY:
@@ -233,6 +232,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             #ifdef __AVR__
             writePinHigh(E6);
             #endif
+          }
+          return false;
+          break;
+        case ZPUZ:
+          if (record->event.pressed) {
+            PLAY_SONG(zelda_puzzle);
+          }
+          return false;
+          break;
+        case IMPM:
+          if (record->event.pressed) {
+            PLAY_SONG(imperial_march);
           }
           return false;
           break;
