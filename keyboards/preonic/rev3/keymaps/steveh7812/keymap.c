@@ -170,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, QK_BOOT, DB_TOGG, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL,
   _______, _______, MU_NEXT, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______, _______,
   _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  ZPUZ,    IMPM,    RROLL,   BLDLY,   FRBL,
-  _______, _______, _______, _______, _______, _______, _______, KICK,    COIN,    _______, _______, _______
+  _______, _______, _______, _______, _______, _______, _______, _______, COIN,    KICK,     _______, _______
 )
 
 
