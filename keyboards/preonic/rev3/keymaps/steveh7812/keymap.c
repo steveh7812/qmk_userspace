@@ -164,8 +164,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
   _______, QK_BOOT, DB_TOGG, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL,
   _______, _______, MU_NEXT, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______, _______,
-  _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  ZPUZ,   IMPM,     _______, _______, _______,
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+  _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  ZPUZ,    IMPM,    RROLL,   BLDLY,   FRBL,
+  _______, _______, _______, _______, _______, _______, _______, KICK,    COIN,    _______, _______, _______
 )
 
 
@@ -174,6 +174,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Aliases for playing songs
 float zelda_puzzle[][2] = SONG(ZELDA_PUZZLE);
 float imperial_march[][2] = SONG(IMPERIAL_MARCH);
+float rick_roll[][2] = SONG(RICK_ROLL);
+float to_boldly_go[][2] = SONG(TO_BOLDLY_GO);
+float mario_fireball[][2] = SONG(MARIO_FIREBALL);
+float mario_kick[][2] = SONG(MARIO_KICK);
+float mario_coin[][2] = SONG(MARIO_COIN);
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
@@ -244,6 +249,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case IMPM:
           if (record->event.pressed) {
             PLAY_SONG(imperial_march);
+          }
+          return false;
+          break;
+        case RROLL:
+          if (record->event.pressed) {
+            PLAY_SONG(rick_roll);
+          }
+          return false;
+          break;
+        case BLDLY:
+          if (record->event.pressed) {
+            PLAY_SONG(to_boldly_go);
+          }
+          return false;
+          break;
+        case FRBL:
+          if (record->event.pressed) {
+            PLAY_SONG(mario_fireball);
+          }
+          return false;
+          break;
+        case KICK:
+          if (record->event.pressed) {
+            PLAY_SONG(mario_kick);
+          }
+          return false;
+          break;
+        case COIN:
+          if (record->event.pressed) {
+            PLAY_SONG(mario_coin);
           }
           return false;
           break;
